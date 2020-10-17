@@ -1,52 +1,25 @@
-# Prerequisites
-*.d
+#include <stdio.h>
+#include <stdlib.h>
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+int main(){
+    int x1,x2,v1,v2;
+    int x=0;
 
-# Linker output
-*.ilk
-*.map
-*.exp
+    printf("x1: posisi awal jangkrik 1\n");
+    printf("v1: kecepatan jangkrik 1\n");
+    printf("x2: posisi awal jangkrik 2\n");
+    printf("v2: kecepatan awal jangkrik 2\n");
+    printf("\n");
+    printf("masukkan x1, v1, x2, v2, secara berurutan:\n");
+    scanf("%d %d %d %d", &x1, &v1, &x2, &v2);
 
-# Precompiled Headers
-*.gch
-*.pch
+if(0<=x1 && x1<x2 && x2<=1000 && 1<=v1<=1000 && 1<=v2<=1000){
+    do{x1=x1+v1;
+    x2=x2+v2;}
+    while(x1!=x2);
+} else {printf("angka yang anda masukkan tidak valid"); exit(EXIT_FAILURE);}
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+if(x1==x2){printf("YES");}
+else {printf("NO");}
+    return(0);
+} 
